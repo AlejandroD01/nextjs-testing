@@ -11,8 +11,8 @@ jest.mock("next/navigation", () => ({
 test("Test navigation to another route", () => {
     const mockPush = jest.fn();
 
-    // @ts-expect-error
-    useRouter.mockReturnValue({
+    
+    (useRouter as jest.Mock).mockReturnValue({
         push: mockPush,
     });
 
