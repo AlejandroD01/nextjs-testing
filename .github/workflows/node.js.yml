@@ -23,7 +23,6 @@ jobs:
         run: echo "Hello world"
       - name: dame la fecha
         run: date
-      - name: Muestra el directorio
-        run: ls -la
+  
  
 
