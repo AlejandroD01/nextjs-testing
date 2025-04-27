@@ -63,7 +63,7 @@ describe("Testing TodoAndPhotoList component", () => {
 
         await waitFor(() => {
             const photoItems = screen.getAllByRole("listitem");
-            expect(photoItems.length).toBe(2);
+            expect(photoItems.length).toBe(4);
             expect(photoItems[0].textContent).toContain("Photo 1");
             expect(photoItems[1].textContent).toContain("Photo 2");
         });
