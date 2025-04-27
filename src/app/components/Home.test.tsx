@@ -26,6 +26,7 @@ test("Test navigation to another route", () => {
 
 test("should navigate to myroute when button is clicked", () => {
     const pushMock = jest.fn();
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const useRouterMock = jest.spyOn(require("next/navigation"), "useRouter").mockReturnValue({
         push: pushMock,
     });

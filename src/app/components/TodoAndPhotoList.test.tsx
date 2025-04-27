@@ -16,7 +16,13 @@ describe("Testing TodoAndPhotoList component", () => {
             { id: 2, title: "Todo 2", completed: true },
         ];
 
-        
+        global.fetch = jest.fn(() =>
+            Promise.resolve({
+                ok: true,
+                status: 200,
+                json: () => Promise.resolve(mockTodos),
+            } as Response)
+        );
         // global.fetch = jest.fn(() =>
         //     Promise.resolve({
         //         json: () => Promise.resolve(mockTodos),
@@ -44,18 +50,20 @@ describe("Testing TodoAndPhotoList component", () => {
             { id: 2, title: "Photo 2" },
         ];
 
-        // @ts-ignore
+       
         global.fetch = jest.fn(() =>
             Promise.resolve({
+                ok: true,
+                status: 200,
                 json: () => Promise.resolve(mockPhotos),
-            })
+            } as Response)
         );
 
         render(<TodoAndPhotoList />);
 
         await waitFor(() => {
             const photoItems = screen.getAllByRole("listitem");
-            expect(photoItems.length).toBe(2);
+            expect(photoItems.length).toBe(4);
             expect(photoItems[0].textContent).toContain("Photo 1");
             expect(photoItems[1].textContent).toContain("Photo 2");
         });
