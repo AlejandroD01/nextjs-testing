@@ -11,7 +11,7 @@ jest.mock("next/navigation", () => ({
 test("Test navigation to another route", () => {
     const mockPush = jest.fn();
 
-    // @ts-ignore
+    // @ts-expect-error
     useRouter.mockReturnValue({
         push: mockPush,
     });
@@ -23,13 +23,12 @@ test("Test navigation to another route", () => {
 })
 
 
+
 test("should navigate to myroute when button is clicked", () => {
     const pushMock = jest.fn();
-    const useRouterMock = jest
-        .spyOn(require("next/navigation"), "useRouter")
-        .mockReturnValue({
-            push: pushMock,
-        });
+    const useRouterMock = jest.spyOn(require("next/navigation"), "useRouter").mockReturnValue({
+        push: pushMock,
+    });
     const { getByText } = render(<Home />);
     fireEvent.click(getByText("Navigate to myroute"));
     expect(pushMock).toHaveBeenCalledWith("myroute");

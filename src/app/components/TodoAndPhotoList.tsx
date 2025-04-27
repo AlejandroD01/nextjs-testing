@@ -1,5 +1,15 @@
 "use client";
 import React, { useState, useEffect} from "react";
+interface Todo {
+    id: number;
+    title: string;
+    completed: boolean;
+}
+
+interface Photo {
+    id: number;
+    title: string;
+}
 
 const TodoAndPhotoList = () => {
     const [todos, setTodos] = useState([]);
@@ -19,7 +29,7 @@ const TodoAndPhotoList = () => {
         <div>
             <h1 className="text-2xl font-bold mb-4">Tods</h1>
             <ul className="list-disc pl-5 mb-8">
-                {todos.slice(0, 5).map((todo: any) => (
+                {todos.slice(0, 5).map((todo: Todo) => (
                     <li key={todo?.id}>
                         {todo.title} - {todo.completed ? "Completed" : "Pending"}
                     </li>
@@ -28,7 +38,7 @@ const TodoAndPhotoList = () => {
 
             <h1 className="text-2xl font-bold mb-4">Photo List</h1>
             <ul>
-                {photos.slice(0, 5).map((photo: any) => (
+                {photos.slice(0, 5).map((photo: Photo) => (
                     <li key={photo.id} className="border p-2 rounded shadow-md">
                         <p className="mt-2">{photo.title}</p>
                     </li>

@@ -16,7 +16,7 @@ describe("Testing TodoAndPhotoList component", () => {
             { id: 2, title: "Todo 2", completed: true },
         ];
 
-        // @ts-ignore
+        // @ts-expect-error
         global.fetch = jest.fn(() =>
             Promise.resolve({
                 json: () => Promise.resolve(mockTodos),
