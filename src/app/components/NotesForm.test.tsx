@@ -2,6 +2,8 @@ import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import NotesApp from "./NotesForm";
 
+// FireEvent is a utility function that simulates user events like clicks, typing, etc. in the DOM.
+
 describe("Testinf NotesApp component", () => {
     beforeEach(() => {
         render(<NotesApp />);
