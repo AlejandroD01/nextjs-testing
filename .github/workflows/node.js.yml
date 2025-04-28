@@ -32,8 +32,8 @@ jobs:
     - name: Instala las dependencias de node
       run: npm ci
 
-    - name: Construir aplicación (si el script existe)
-      run: npm run build --if-present
+    # - name: Construir aplicación (si el script existe)
+    #   run: npm run build --if-present
 
     - name: Ejecutar pruebas
       run: npm test
