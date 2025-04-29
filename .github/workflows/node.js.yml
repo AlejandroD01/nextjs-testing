@@ -29,7 +29,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'  
     
-    - name: Instala las dependencias de node
+    - name: Instala las dependencias de nodes
       run: npm ci
 
     # - name: Construir aplicación (si el script existe)
