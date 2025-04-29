@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watchAll",
     "test-home": "npx jest Home.test.tsx",
     "test-notes": "npx jest NotesForm.test.tsx",
     "test-todos": "npx jest TodoAndPhotoList.test.tsx"
