@@ -14,7 +14,7 @@ describe("Testing TodoAndPhotoList component", () => {
         global.fetch = originalFetch;
     });
 
-    //Se define un arreglo de objetos simulando la respuesta de la API
+    //Se define un arreglo de objetos simulando la respuesta de la API ....
     it("should fect todos from API and update state", async () => {
         const mockTodos = [
             { id: 1, title: "Todo 1", completed: false },
