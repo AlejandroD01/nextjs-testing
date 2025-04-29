@@ -3,18 +3,17 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./Home";
 import { useRouter } from "next/navigation";
 
-
+// Testear la router
+//mockeando useRouter de next/navigation para evitar el comportamiento real de enrutamiento durante la prueba.
 jest.mock("next/navigation", () => ({
     useRouter: jest.fn(),
 }));
 
 test("Test navigation to another route", () => {
+   
+    //mockPush es una función simulada (jest.fn()) que representa el método push() del enrutador.
     const mockPush = jest.fn();
-
-    
-    (useRouter as jest.Mock).mockReturnValue({
-        push: mockPush,
-    });
+    (useRouter as jest.Mock).mockReturnValue({  push: mockPush });
 
     render(<Home />);
     const button = screen.getByRole("button");
